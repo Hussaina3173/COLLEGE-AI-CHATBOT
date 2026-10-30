@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">AI</div>
+                <span>CollegeAI</span>
+            </div>
+
+            <nav class="nav">
+                <div class="nav-item active">🏠 Overview</div>
+                <a class="nav-item" href="/courses">📚 Courses</a>
+                <a class="nav-item" href="/students">🧑‍🎓 Student Data</a>
+                <a class="nav-item" href="/schedule">📅 Schedule</a>
+                <a class="nav-item" href="/support">💬 Support</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h4>AI advisor</h4>
+                <p>Ask about admissions, student life, faculty, events, and academic support.</p>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="welcome">
+                    <span>Welcome back</span>
+                    <h1>College AI Dashboard</h1>
+                </div>
+
+                <div class="top-actions">
+                    <div class="icon-btn">🔔</div>
+                    <button class="profile" id="profile-button" type="button" aria-haspopup="dialog">
+                        <div class="avatar">S</div>
+                        <div>
+                            <strong id="profile-name">Student</strong><br>
+                            <small>Smart Campus</small>
+                        </div>
+                    </button>
+                </div>
+            </header>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <div>
+                        <small>Active students</small>
+                        <strong>4k</strong>
+                    </div>
+                    <div class="icon">👥</div>
+                </div>
+
+                <div class="stat-card">
+                    <div>
+                        <small>Courses</small>
+                        <strong>46</strong>
+                    </div>
+                    <div class="icon">🎓</div>
+                </div>
+
+                <div class="stat-card">
+                    <div>
+                        <small>Support rate</small>
+                        <strong>96%</strong>
+                    </div>
+                    <div class="icon">✅</div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="chat-panel">
+                    <div class="panel-header">
+                        <h3>AI Chat Assistant</h3>
+                        <span class="status-pill">Online</span>
+                    </div>
+
+                    <div class="suggestions">
+                        <button class="chip">Tell me about courses</button>
+                        <button class="chip">Admission info</button>
+                        <button class="chip">Campus life</button>
+                        <button class="chip">Faculty support</button>
+                    </div>
+
+                    <div id="messages">
+                        <div class="message bot">Hello! I’m your college assistant. Ask me about courses, admissions, or campus life.</div>
+                    </div>
+
+                    <div class="input-wrap">
+                        <input type="text" id="user-input" maxlength="2000" placeholder="Ask the AI assistant..." />
+                        <button id="send-btn">Send</button>
+                    </div>
+                </div>
+
+                <aside class="right-panel">
+                    <div class="mini-card">
+                        <h4>Quick access</h4>
+                        <div class="list">
+                            <div class="list-item"><span>Academic Calendar</span> <span class="badge">Live</span></div>
+                            <div class="list-item"><span>Student Portal</span> <span class="badge">Open</span></div>
+                            <div class="list-item"><span>Exam Schedule</span> <span class="badge">Updated</span></div>
+                        </div>
+                    </div>
+
+                    <div class="calendar-box">
+                        <h4>Event Calendar</h4>
+                        <div class="calendar">
+                            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                            <div class="day">29</div><div class="day">30</div><div class="day">31</div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div>
+                            <div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day highlight">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+
+        </main>
+    </div>
+
+    <dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title">
+        <h2 id="login-title">Student login</h2>
+        <p id="login-description">Sign in to your Smart Campus account.</p>
+        <form id="login-form">
+            <div class="registration-field" hidden>
+                <label for="register-full-name">Full name</label>
+                <input id="register-full-name" name="full_name" type="text" autocomplete="name"
+                       placeholder="Full name" minlength="2" maxlength="100">
+            </div>
+            <div class="registration-field" hidden>
+                <label for="register-email">Email</label>
+                <input id="register-email" name="email" type="email" autocomplete="email"
+                       placeholder="Email address" maxlength="254">
+            </div>
+            <div class="registration-field" hidden>
+                <label for="register-phone">Phone (optional)</label>
+                <input id="register-phone" name="phone" type="tel" autocomplete="tel"
+                       placeholder="Phone number" maxlength="30">
+            </div>
+            <div class="registration-field" hidden>
+                <label for="register-program">Program / major (optional)</label>
+                <input id="register-program" name="program" type="text"
+                       placeholder="e.g. Computer Science" maxlength="100">
+            </div>
+            <div class="registration-field" hidden>
+                <label for="register-year">Year of study (optional)</label>
+                <select id="register-year" name="year">
+                    <option value="">Select year</option>
+                    <option value="1">Year 1</option>
+                    <option value="2">Year 2</option>
+                    <option value="3">Year 3</option>
+                    <option value="4">Year 4</option>
+                    <option value="PG">Postgraduate</option>
+                </select>
+            </div>
+            <div class="login-field">
+                <label for="login-username">Username</label>
+                <input id="login-username" name="username" type="text" autocomplete="username" placeholder="username" minlength="3" maxlength="32" required>
+            </div>
+            <div class="login-field">
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="password" minlength="8" required>
+            </div>
+            <div id="login-error" role="alert" aria-live="polite"></div>
+            <div class="login-actions">
+                <button id="toggle-auth-mode" type="button">Create an account</button>
+                <button id="logout-button" type="button" hidden>Log out</button>
+                <button id="close-login" type="button">Close</button>
+                <button id="login-submit" type="submit">Log in</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="/static/script.js" defer></script>
+</body>
+</html>

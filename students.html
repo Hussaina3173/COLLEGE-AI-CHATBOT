@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | College AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/students.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">AI</div>
+                <span>CampusAI</span>
+            </div>
+
+            <nav class="nav">
+                <a class="nav-item" href="/">🏠 Overview</a>
+                <a class="nav-item" href="/courses">📚 Courses</a>
+                <a class="nav-item active" href="/students" aria-current="page">🧑‍🎓 Student Data</a>
+                <a class="nav-item" href="/schedule">📅 Schedule</a>
+                <a class="nav-item" href="/support">💬 Support</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h4>Student services</h4>
+                <p>Explore student profiles, academic progress, campus activities, and opportunities.</p>
+            </div>
+        </aside>
+
+        <main class="main students-page-main">
+            <header class="topbar">
+                <div class="welcome">
+                    <span>STUDENT SUCCESS</span>
+                    <h1>Students &amp; Engagement</h1>
+                </div>
+                <a class="back-dashboard" href="/">← Back to dashboard</a>
+            </header>
+
+            <section class="student-section" aria-labelledby="directory-heading">
+                <div class="student-section-heading">
+                    <div>
+                        <span>STUDENT DATA &amp; PROFILES</span>
+                        <h2 id="directory-heading">Student directory</h2>
+                        <p>Your saved registration details appear below; academic progress figures are illustrative.</p>
+                    </div>
+                    <span class="course-count">Your profile</span>
+                </div>
+
+                <div class="student-grid">
+                    <article class="student-card">
+                        <div class="student-profile">
+                            <div class="student-photo" role="img" aria-label="Demo profile photo placeholder">D</div>
+                            <div>
+                                <span class="student-label">STUDENT PROFILE</span>
+                                <h3 id="student-full-name">Sign in to view your profile</h3>
+                                <p id="student-program">Program not provided</p>
+                            </div>
+                        </div>
+                        <div class="student-facts">
+                            <span>Email</span><strong id="student-email">Not provided</strong>
+                            <span>Phone</span><strong id="student-phone">Not provided</strong>
+                            <span>Username</span><strong id="student-username">Not signed in</strong>
+                            <span>Year</span><strong id="student-year">Not provided</strong>
+                        </div>
+                        <p class="ongoing-courses"><strong>Ongoing courses:</strong> Data Structures, Discrete Mathematics</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="student-section" aria-labelledby="attendance-heading">
+                <div class="student-section-heading">
+                    <div>
+                        <span>ACADEMIC PROGRESS</span>
+                        <h2 id="attendance-heading">Attendance tracker</h2>
+                        <p>Illustrative weekly attendance log for a demo student.</p>
+                    </div>
+                    <span class="attendance-summary">Example: 4 of 5 days present</span>
+                </div>
+                <div class="attendance-table-wrap">
+                    <table class="attendance-table">
+                        <thead>
+                            <tr><th scope="col">Day</th><th scope="col">Course</th><th scope="col">Attendance</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Monday</td><td>Data Structures</td><td><span class="attendance-status present">Present</span></td></tr>
+                            <tr><td>Tuesday</td><td>Discrete Mathematics</td><td><span class="attendance-status present">Present</span></td></tr>
+                            <tr><td>Wednesday</td><td>Computer Networks</td><td><span class="attendance-status absent">Absent</span></td></tr>
+                            <tr><td>Thursday</td><td>Database Systems</td><td><span class="attendance-status present">Present</span></td></tr>
+                            <tr><td>Friday</td><td>Data Structures Lab</td><td><span class="attendance-status present">Present</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="student-section" aria-labelledby="engagement-heading">
+                <div class="student-section-heading">
+                    <div>
+                        <span>ENGAGEMENT &amp; ACTIVITIES</span>
+                        <h2 id="engagement-heading">Beyond the classroom</h2>
+                        <p>Example clubs, student projects, and career opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="engagement-grid">
+                    <article class="engagement-card">
+                        <div class="engagement-icon">🎭</div>
+                        <span class="student-label">CLUBS &amp; SOCIETIES</span>
+                        <h3>Campus communities</h3>
+                        <ul class="engagement-list">
+                            <li><strong>Tech Society</strong><span>Member · Demo profile</span></li>
+                            <li><strong>Robotics Club</strong><span>Member · Demo profile</span></li>
+                            <li><strong>Upcoming event</strong><span>Student project showcase · Date to be announced</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="engagement-card">
+                        <div class="engagement-icon">🔬</div>
+                        <span class="student-label">PROJECTS &amp; RESEARCH</span>
+                        <h3>Student-led initiatives</h3>
+                        <ul class="engagement-list">
+                            <li><strong>Smart energy monitor</strong><span>Prototype · Example project</span></li>
+                            <li><strong>Campus accessibility map</strong><span>In progress · Example project</span></li>
+                            <li><strong>Publications</strong><span>No verified student publications added</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="engagement-card">
+                        <div class="engagement-icon">🚀</div>
+                        <span class="student-label">INTERNSHIPS &amp; PLACEMENTS</span>
+                        <h3>Career opportunities</h3>
+                        <ul class="engagement-list">
+                            <li><strong>Software development intern</strong><span>Example opportunity · Verify availability</span></li>
+                            <li><strong>Mechanical design intern</strong><span>Example opportunity · Verify availability</span></li>
+                            <li><strong>Student outcomes</strong><span>Add verified placement stories to share achievements</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

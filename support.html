@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Support | College AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/support.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">AI</div>
+                <span>CampusAI</span>
+            </div>
+
+            <nav class="nav">
+                <a class="nav-item" href="/">🏠 Overview</a>
+                <a class="nav-item" href="/courses">📚 Courses</a>
+                <a class="nav-item" href="/students">🧑‍🎓 Student Data</a>
+                <a class="nav-item" href="/schedule">📅 Schedule</a>
+                <a class="nav-item active" href="/support" aria-current="page">💬 Support</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h4>Academic support</h4>
+                <p>Send your course or work question to the relevant faculty group and follow its status.</p>
+            </div>
+        </aside>
+
+        <main class="main support-page-main">
+            <header class="topbar">
+                <div class="welcome">
+                    <span>STUDENT SERVICES</span>
+                    <h1>Ask a teacher</h1>
+                </div>
+                <a class="back-dashboard" href="/">← Back to dashboard</a>
+            </header>
+
+            <section class="support-layout" aria-label="Submit and track support queries">
+                <section class="support-form-panel" aria-labelledby="support-form-heading">
+                    <span class="course-level">TEACHER SUPPORT</span>
+                    <h2 id="support-form-heading">Send a query</h2>
+                    <p>Choose the appropriate faculty group and describe the work you need help with.</p>
+
+                    <form id="support-form">
+                        <label for="support-teacher">Teacher / faculty</label>
+                        <select id="support-teacher" name="teacher" required>
+                            <option value="" selected disabled>Select a faculty group</option>
+                            <option>Computer Science Faculty</option>
+                            <option>Mathematics Faculty</option>
+                            <option>Mechanical Engineering Faculty</option>
+                            <option>Business Administration Faculty</option>
+                        </select>
+
+                        <label for="support-subject">Subject</label>
+                        <input id="support-subject" name="subject" type="text" maxlength="120"
+                               placeholder="e.g. Help with assignment 2" required>
+
+                        <label for="support-query">Your query</label>
+                        <textarea id="support-query" name="query" rows="7" maxlength="5000"
+                                  placeholder="Describe your question or the work you need help with..." required></textarea>
+
+                        <div id="support-message" class="support-message" role="status" aria-live="polite"></div>
+                        <button id="support-submit" class="support-submit" type="submit">Submit query</button>
+                    </form>
+                </section>
+
+                <section class="support-requests-panel" aria-labelledby="requests-heading">
+                    <div class="support-requests-heading">
+                        <div>
+                            <span class="course-level">YOUR SUPPORT HISTORY</span>
+                            <h2 id="requests-heading">My queries</h2>
+                        </div>
+                        <button id="refresh-queries" class="calendar-nav-button" type="button" aria-label="Refresh queries">↻</button>
+                    </div>
+                    <div id="query-list" class="query-list" aria-live="polite">
+                        <p class="query-empty">Loading your queries…</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
