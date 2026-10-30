@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | College AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/schedule.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">AI</div>
+                <span>CampusAI</span>
+            </div>
+
+            <nav class="nav">
+                <a class="nav-item" href="/">🏠 Overview</a>
+                <a class="nav-item" href="/courses">📚 Courses</a>
+                <a class="nav-item" href="/students">🧑‍🎓 Student Data</a>
+                <a class="nav-item active" href="/schedule" aria-current="page">📅 Schedule</a>
+                <a class="nav-item" href="/support">💬 Support</a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h4>Academic calendar</h4>
+                <p>Browse the year and see selected public holidays.</p>
+            </div>
+        </aside>
+
+        <main class="main schedule-page-main">
+            <header class="topbar">
+                <div class="welcome">
+                    <span>PLAN YOUR YEAR</span>
+                    <h1>Schedule &amp; Holidays</h1>
+                </div>
+                <a class="back-dashboard" href="/">← Back to dashboard</a>
+            </header>
+
+            <section class="schedule-layout" aria-label="2026 calendar and holidays">
+                <div class="calendar-panel">
+                    <div class="calendar-toolbar">
+                        <button id="previous-month" class="calendar-nav-button" type="button" aria-label="Previous month">←</button>
+                        <h2 id="calendar-month" aria-live="polite"></h2>
+                        <button id="next-month" class="calendar-nav-button" type="button" aria-label="Next month">→</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid" role="grid" aria-labelledby="calendar-month"></div>
+                    <div class="calendar-legend">
+                        <span class="holiday-legend-dot"></span>
+                        <span>Selected public holiday</span>
+                    </div>
+                </div>
+
+                <aside class="holiday-panel" aria-labelledby="holiday-list-heading">
+                    <span class="course-level">2026 HOLIDAYS</span>
+                    <h2 id="holiday-list-heading">Selected dates</h2>
+                    <p>Major public holidays are marked on the calendar.</p>
+                    <ul class="holiday-list">
+                        <li><time datetime="2026-01-26">Jan 26</time><span>Republic Day</span></li>
+                        <li><time datetime="2026-08-15">Aug 15</time><span>Independence Day</span></li>
+                        <li><time datetime="2026-10-02">Oct 2</time><span>Gandhi Jayanti</span></li>
+                        <li><time datetime="2026-12-25">Dec 25</time><span>Christmas Day</span></li>
+                    </ul>
+                    <p class="course-source">Institute holidays and observances may vary.</p>
+                </aside>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
